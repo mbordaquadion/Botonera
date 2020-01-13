@@ -1,0 +1,56 @@
+function redirectCloudIdentity() {
+    window.location.href = "https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/authorize?client_id=2ff9f813-d792-4c3b-aa84-9866900875c2&redirect_uri=http://localhost:8080/proxy/rest/CloudIdentityService/token&scope=openid&response_type=code&response_mode=form_post&nonce=2hfuulyr92j";
+}
+
+function getToken() {
+
+    let json = {
+        redirect_uri: "http://localhost:8080/proxy/rest/CloudIdentityService/token",
+        client_id: "2ff9f813-d792-4c3b-aa84-9866900875c2",
+        client_secret: "P4OKYgoDN0",
+        code: $("#token_code").val(),
+        grant_type: "authorization_code"
+    }
+
+    $.post("https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/token", json)
+        .done(function (data) {
+            console.log(data);
+
+            $("#token_field").text("\naccess_token: " + data.access_token
+                + "\nrefresh_token: " + data.refresh_token
+                + "\nscope: " + data.scope
+                + "\ngrant_id: " + data.grant_id
+                + "\nid_token: " + data.id_token
+                + "\ntoken_type: " + data.token_type
+                + "\nexpires_in: " + data.expires_in
+            );
+        })
+        .fail(function (error) {
+            $("#token_field").text(error.responseText);
+        });
+}
+
+function getTokenWithoutCode() {
+
+    let json = {
+        client_id: "67f4b9af-fbaa-41ec-ad74-6ca022553843",
+        client_secret: "CCnzRd6GRw",
+        grant_type: "client_credentials"
+    }
+
+    $.post("https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/token", json)
+        .done(function (data) {
+            console.log(data);
+
+            ACCESS_TOKEN = data.access_token;
+
+            $("#token_field").text("\naccess_token: " + data.access_token
+                + "\ngrant_id: " + data.grant_id
+                + "\ntoken_type: " + data.token_type
+                + "\nexpires_in: " + data.expires_in
+            );
+        })
+        .fail(function (error) {
+            $("#token_field").text(error.responseText);
+        });
+}

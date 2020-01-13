@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Botonera JQuery</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .row {
+            padding-top: 1%;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <h3 class="navbar-brand">Navbar</h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link" id="token-tab" data-toggle="tab" role="tab" href="#token" aria-controls="token"
+                aria-selected="false">Token</a>
+            <a class="nav-item nav-link" id="alta-usr-tab" data-toggle="tab" role="tab" href="#alta-usr"
+                aria-controls="alta-usr" aria-selected="false">Alta Usuario</a>
+            <a class="nav-item nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                aria-controls="contact" aria-selected="false">Contact</a>
+        </div>
+
+    </nav>
+
+    <!-- Tab de obtecion de token -->
+    <div class="tab-content container-flex" id="myTabContent" style="padding-top: 5%;">
+        <div class="tab-pane fade show active" id="token" role="tabpanel" aria-labelledby="token-tab">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="offset-2 col-4 justify-content-center">
+                        <button class="btn btn-md btn-success" id="bt-redirect-ci">Cloud Identity LogIn</button>
+                    </div>
+                    <div class="col-4 justify-content-center">
+                        <button class="btn btn-md btn-primary" id="bt-token-nocode">Get Token Without Code</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-2 col-8">
+                        <input class="form-control" type="text" placeholder="Code" id="token_code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-2 col-8">
+                        <button class="btn btn-md btn-primary" id="btn-get-token">GetToken</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-2 col-8">
+                        <textarea id="token_field" class="text-success form-control" rows="10" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tab de obtecion de token -->
+        <!-- Tab de Alta Usuarios -->
+        <div class="tab-pane fade" id="alta-usr" role="tabpanel" aria-labelledby="alta-usr-tab">
+
+            <div class="container justify-content-center">
+                <div class="row">
+                    <div class="col-4">
+                        <input placeholder="Write your userName" id="alta-usr-username" class="form-control" type="text" value="">
+                    </div>
+                    <div class="col-4">
+                        <input placeholder="Write your password" id="alta-usr-password" class="form-control" type="text" value="">
+                    </div>
+                    <div class="col-4">
+                        <input placeholder="Write your email" id="alta-usr-email" class="form-control" type="text" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <input placeholder="Write your Surname" id="alta-usr-surname" class="form-control" type="text" value="">
+                    </div>
+                    <div class="col-4">
+                        <input placeholder="Write your Name" id="alta-usr-name" class="form-control" type="text" value="">
+                    </div>
+                    <div class="col-4">
+                        <input placeholder="Write your Phone Number" id="alta-usr-phone" class="form-control" type="text" value="">
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <button class="btn btn-md btn-primary" id="alta-usuario">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        </div>
+    </div>
+
+
+    <script src="./js/jqueryv3.4.1.js"></script>
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/token.js"></script>
+    <script src="./js/alta-usr.js"></script>
+</body>
+
+</html>
