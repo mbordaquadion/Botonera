@@ -1,49 +1,27 @@
 function altaUsuario() {
 
-    let post_user = {
-        "schemas": [
-            "urn:ietf:params:scim:schemas:core:2.0:User",
-            "urn:ietf:params:scim:schemas:extension:ibm:2.0:User",
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
-        ],
-        "userName": $('#alta-usr-username').val(),
-        "password": $('#alta-usr-password').val(),
-        "title": "End User",
-        "name": {
-            "familyName": $('#alta-usr-surname').val(),
-            "givenName": $('#alta-usr-name').val()
-        },
-        "displayName": $('#alta-usr-surname').val() + " " + $('#alta-usr-name').val(),
-        "preferredLanguage": "en-US",
-        "active": true,
-        "emails": [
-            {
-                "value": $('#alta-usr-email').val(),
-                "type": "work"
-            }
-        ],
-        "phoneNumbers": [
-            {
-                "value": $('#alta-usr-phone').val(),
-                "type": "mobile"
-            }
-        ],
-        "urn:ietf:params:scim:schemas:extension:ibm:2.0:User": {
-            "userCategory": "regular",
-            "twoFactorAuthentication": false
-        },
-        "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
-            "department": "Test Users",
-            "employeeNumber": "012345"
+    let CloudIdentityAltaUsuarioDto = {
+        token: ACCESS_TOKEN,
+        username: $('#alta-usr-username').val(),
+        password: $('#alta-usr-password').val(),
+        surname: $('#alta-usr-surname').val(),
+        name: $('#alta-usr-name').val(),
+        email: $('#alta-usr-email').val(),
+        phone: $('#alta-usr-phone').val()
+    }
+    $.ajax({
+        url: "http://localhost:8080/proxy/rest/CloudIdentityService/altaUsuario",
+        method: "POST",
+        contentType: 'application/json; charset=utf-8',
+        dataType: "json",
+        data: JSON.stringify(CloudIdentityAltaUsuarioDto),
+        statusCode: {
+            201: function (data) {
+                debugger
+                alert(data.code + ': ' + data.entity);
+            },
         }
-    };
-
-    $.post("http://localhost:8080/proxy/rest/CloudIdentityService/altaUsuario",
-        { "token": ACCESS_TOKEN, "json": post_user })
-        .done(function (data) {
-            debugger
-        })
-        .fail(function (error) {
-            debugger
-        });
+    }).fail(function (jqXHR, textStatus) {
+        alert(jqXHR.responseJSON.code + ': ' + jqXHR.responseJSON.entity);
+    });
 }
