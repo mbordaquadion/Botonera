@@ -1,5 +1,21 @@
 function redirectCloudIdentity() {
-    window.location.href = "https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/authorize?client_id=2ff9f813-d792-4c3b-aa84-9866900875c2&redirect_uri=http://localhost:8080/proxy/rest/CloudIdentityService/token&scope=openid&response_type=code&response_mode=form_post&nonce=2hfuulyr92j";
+
+    $.ajax({
+        url: "http://localhost:8080/proxy/rest/CloudIdentityService/getRedirectAuthority",
+        method: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: "text",
+        statusCode: {
+            200: function (redirectUri) {
+                debugger
+                window.location.href = redirectUri;
+            },
+        }
+    }).fail(function (jqXHR, textStatus) {
+        alert(jqXHR.responseJSON.code + ': ' + jqXHR.responseJSON.entity);
+    });
+
+    //window.location.href = "https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/authorize?client_id=2ff9f813-d792-4c3b-aa84-9866900875c2&redirect_uri=http://localhost:8080/proxy/rest/CloudIdentityService/token&scope=openid&response_type=code&response_mode=form_post&nonce=2hfuulyr92j";
 }
 
 function getToken() {

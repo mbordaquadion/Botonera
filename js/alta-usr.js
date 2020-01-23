@@ -1,7 +1,6 @@
 function altaUsuario() {
 
     let CloudIdentityAltaUsuarioDto = {
-        token: ACCESS_TOKEN,
         username: $('#alta-usr-username').val(),
         password: $('#alta-usr-password').val(),
         surname: $('#alta-usr-surname').val(),

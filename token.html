@@ -51,8 +51,8 @@
                 aria-selected="false">Token</a>
             <a class="nav-item nav-link" id="alta-usr-tab" data-toggle="tab" role="tab" href="#alta-usr"
                 aria-controls="alta-usr" aria-selected="false">Alta Usuario</a>
-            <a class="nav-item nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                aria-controls="contact" aria-selected="false">Contact</a>
+            <a class="nav-item nav-link" id="del-usr-tab" data-toggle="tab" href="#del-usr" role="tab"
+                aria-controls="del-usr" aria-selected="false">Borrar Usuario</a>
         </div>
 
     </nav>
@@ -75,8 +75,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="offset-2 col-8">
-                        <button class="btn btn-md btn-primary" id="btn-get-token">GetToken</button>
+                    <div class="offset-2 col-3">
+                        <button class="btn btn-md btn-primary" id="btn-get-token">GetToken (Athorization Code)</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-md btn-primary" id="btn-refresh-token">Refresh Token</button>
                     </div>
                 </div>
                 <div class="row">
@@ -93,24 +96,30 @@
             <div class="container justify-content-center">
                 <div class="row">
                     <div class="col-4">
-                        <input placeholder="Write your userName" id="alta-usr-username" class="form-control" type="text" value="">
+                        <input placeholder="Write your userName" id="alta-usr-username" class="form-control" type="text"
+                            value="">
                     </div>
                     <div class="col-4">
-                        <input placeholder="Write your password" id="alta-usr-password" class="form-control" type="text" value="">
+                        <input placeholder="Write your password" id="alta-usr-password" class="form-control" type="text"
+                            value="">
                     </div>
                     <div class="col-4">
-                        <input placeholder="Write your email" id="alta-usr-email" class="form-control" type="text" value="">
+                        <input placeholder="Write your email" id="alta-usr-email" class="form-control" type="text"
+                            value="">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <input placeholder="Write your Surname" id="alta-usr-surname" class="form-control" type="text" value="">
+                        <input placeholder="Write your Surname" id="alta-usr-surname" class="form-control" type="text"
+                            value="">
                     </div>
                     <div class="col-4">
-                        <input placeholder="Write your Name" id="alta-usr-name" class="form-control" type="text" value="">
+                        <input placeholder="Write your Name" id="alta-usr-name" class="form-control" type="text"
+                            value="">
                     </div>
                     <div class="col-4">
-                        <input placeholder="Write your Phone Number" id="alta-usr-phone" class="form-control" type="text" value="">
+                        <input placeholder="Write your Phone Number" id="alta-usr-phone" class="form-control"
+                            type="text" value="">
                     </div>
                 </div>
                 <div class="row justify-content-end">
@@ -118,11 +127,21 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="del-usr-tab">
 
+            <div class="row">
+                <div class="col-4">
+                    <!-- <input placeholder="Write your userName" id="alta-usr-username" class="form-control" type="text" value=""> -->
+                </div>
+                <div class="col-4">
+                    <!-- <input placeholder="Write your password" id="alta-usr-password" class="form-control" type="text" value=""> -->
+                </div>
+                <div class="col-4">
+                    <!-- <input placeholder="Write your email" id="alta-usr-email" class="form-control" type="text" value=""> -->
+                </div>
+            </div>
         </div>
     </div>
-
 
     <script src="./js/jqueryv3.4.1.js"></script>
     <script src="./js/bootstrap/bootstrap.min.js"></script>
