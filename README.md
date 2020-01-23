@@ -1,7 +1,11 @@
 # Browse Project
   
   - Para correr el projecto hay que instalar http-server con el CLI de npm
-  - Correrlo en localhost en el puerto 8081 con el comando "http-server -p 8081 -a localhost -o"
+  - Tener instalada la extension de chrome **"Allow CORS: Access-Control-Allow-Origin"**
+  - Correrlo en localhost en el puerto 8081 con el comando
+ ``` 
+ http-server -p 8081 -a localhost -o 
+ ```
 
 # Publish
 
