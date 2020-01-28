@@ -40,6 +40,38 @@ function getToken() {
                 + "\ntoken_type: " + data.token_type
                 + "\nexpires_in: " + data.expires_in
             );
+            $("#inp-refresh-token").val(data.refresh_token);
+        })
+        .fail(function (error) {
+            $("#token_field").text(error.responseText);
+        });
+}
+
+function getRefreshToken() {
+
+    let json = {
+        redirect_uri: "http://localhost:8080/proxy/rest/CloudIdentityService/token",
+        client_id: "2ff9f813-d792-4c3b-aa84-9866900875c2",
+        client_secret: "P4OKYgoDN0",
+        code: $("#token_code").val(),
+        refresh_token: $("#inp-refresh-token").val(),
+        grant_type: "refresh_token"
+    }
+
+    $.post("https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/token", json)
+        .done(function (data) {
+            console.log(data);
+
+            $("#token_field").text("\naccess_token: " + data.access_token
+                + "\nrefresh_token: " + data.refresh_token
+                + "\nscope: " + data.scope
+                + "\ngrant_id: " + data.grant_id
+                + "\nid_token: " + data.id_token
+                + "\ntoken_type: " + data.token_type
+                + "\nexpires_in: " + data.expires_in
+            );
+
+            $("#inp-refresh-token").val(data.refresh_token);
         })
         .fail(function (error) {
             $("#token_field").text(error.responseText);
@@ -49,12 +81,12 @@ function getToken() {
 function getTokenWithoutCode() {
 
     let json = {
-        client_id: "67f4b9af-fbaa-41ec-ad74-6ca022553843",
-        client_secret: "CCnzRd6GRw",
+        client_id: "2ff9f813-d792-4c3b-aa84-9866900875c2",
+        client_secret: "P4OKYgoDN0",
         grant_type: "client_credentials"
     }
 
-    $.post("https://osde-test.ice.ibmcloud.com/oidc/endpoint/default/token", json)
+    $.post("https://testosde.osde.ar/oidc/endpoint/default/token", json)
         .done(function (data) {
             console.log(data);
 

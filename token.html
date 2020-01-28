@@ -51,8 +51,8 @@
                 aria-selected="false">Token</a>
             <a class="nav-item nav-link" id="alta-usr-tab" data-toggle="tab" role="tab" href="#alta-usr"
                 aria-controls="alta-usr" aria-selected="false">Alta Usuario</a>
-            <a class="nav-item nav-link" id="del-usr-tab" data-toggle="tab" href="#del-usr" role="tab"
-                aria-controls="del-usr" aria-selected="false">Borrar Usuario</a>
+            <a class="nav-item nav-link" id="find-usr-tab" data-toggle="tab" href="#find-usr" role="tab"
+                aria-controls="find-usr" aria-selected="false">Buscar Usuario</a>
         </div>
 
     </nav>
@@ -85,6 +85,7 @@
                 <div class="row">
                     <div class="offset-2 col-8">
                         <textarea id="token_field" class="text-success form-control" rows="10" disabled></textarea>
+                        <input type="text" id="inp-refresh-token" hidden>
                     </div>
                 </div>
             </div>
@@ -125,19 +126,37 @@
                 <div class="row justify-content-end">
                     <button class="btn btn-md btn-primary" id="alta-usuario">Submit</button>
                 </div>
+                <div class="row">
+                    <textarea id="usr_alta_field" class="text-success form-control" rows="20" disabled></textarea>
+                </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="del-usr-tab">
+        <div class="tab-pane fade" id="find-usr" role="tabpanel" aria-labelledby="find-usr-tab">
+            <div class="container justify-content-center">
 
-            <div class="row">
-                <div class="col-4">
-                    <!-- <input placeholder="Write your userName" id="alta-usr-username" class="form-control" type="text" value=""> -->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="input-group">
+                            <input placeholder="Filter" id="find-usr-filter" class="form-control" type="text" value="">
+                            <div class="input-group-prepend">
+                                <select class="custom-select" id="select-filter"
+                                    aria-label="Example select with button addon">
+                                    <option selected value="1">E-Mail</option>
+                                    <option value="2">Phone</option>
+                                    <option value="3">UserName</option>
+                                    <option value="4">IC</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4">
-                    <!-- <input placeholder="Write your password" id="alta-usr-password" class="form-control" type="text" value=""> -->
-                </div>
-                <div class="col-4">
+                <div class="row justify-content-end">
+                    <button id="btn-filter-usr" class="btn btn-primary">Filter</button>
                     <!-- <input placeholder="Write your email" id="alta-usr-email" class="form-control" type="text" value=""> -->
+                </div>
+
+                <div class="row">
+                    <textarea id="usr_field" class="text-success form-control" rows="20" disabled></textarea>
                 </div>
             </div>
         </div>
@@ -148,6 +167,7 @@
     <script src="./js/index.js"></script>
     <script src="./js/token.js"></script>
     <script src="./js/alta-usr.js"></script>
+    <script src="./js/filter-usr.js"></script>
 </body>
 
 </html>

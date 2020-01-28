@@ -17,7 +17,7 @@ function altaUsuario() {
         statusCode: {
             201: function (data) {
                 debugger
-                alert(data.code + ': ' + data.entity);
+                $("#usr_alta_field").text(JSON.stringify(JSON.parse(data.entity), null, 2));
             },
         }
     }).fail(function (jqXHR, textStatus) {
