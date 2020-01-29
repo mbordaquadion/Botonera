@@ -7,8 +7,7 @@ $(function () {
     $("#bt-token-nocode").click(getTokenWithoutCode);
     $("#btn-refresh-token").click(getRefreshToken);
     $("#btn-filter-usr").click(filterUsuario);
-    
-
+    $("#btn-del-usr").click(deleteUsuario);
     $("#alta-usuario").click(altaUsuario);
 
     let urlParams = new URLSearchParams(window.location.search);

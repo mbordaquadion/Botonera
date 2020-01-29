@@ -53,6 +53,8 @@
                 aria-controls="alta-usr" aria-selected="false">Alta Usuario</a>
             <a class="nav-item nav-link" id="find-usr-tab" data-toggle="tab" href="#find-usr" role="tab"
                 aria-controls="find-usr" aria-selected="false">Buscar Usuario</a>
+            <a class="nav-item nav-link" id="del-usr-tab" data-toggle="tab" href="#del-usr" role="tab"
+                aria-controls="del-usr" aria-selected="false">Delete Usuario</a>
         </div>
 
     </nav>
@@ -131,11 +133,12 @@
                 </div>
             </div>
         </div>
+        <!-- FIn Tab de Alta Usuarios -->
+        <!-- Tab de Busqueda de Usuarios -->
         <div class="tab-pane fade" id="find-usr" role="tabpanel" aria-labelledby="find-usr-tab">
             <div class="container justify-content-center">
-
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-11">
                         <div class="input-group">
                             <input placeholder="Filter" id="find-usr-filter" class="form-control" type="text" value="">
                             <div class="input-group-prepend">
@@ -149,10 +152,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row justify-content-end">
-                    <button id="btn-filter-usr" class="btn btn-primary">Filter</button>
-                    <!-- <input placeholder="Write your email" id="alta-usr-email" class="form-control" type="text" value=""> -->
+                    <div class="col-1">
+                        <button id="btn-filter-usr" class="btn btn-primary">Filter</button>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -160,6 +162,33 @@
                 </div>
             </div>
         </div>
+        <!-- FIN Tab de Busqueda de Usuarios -->
+        <!-- Tab de Delete de Usuarios -->
+        <div class="tab-pane fade" id="del-usr" role="tabpanel" aria-labelledby="del-usr-tab">
+
+            <div class="container justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="alrt-del-usr" class="alert alert-danger" role="alert" style="display: none;">
+                            Usuario borrado.
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3 mb-1 bg-light">
+                    <div class="row">
+                        <div class="col-6">
+                            <input placeholder="Id de usuario a borrar" id="del-usr-userid" class="form-control"
+                                type="text" value="">
+                        </div>
+                        <div class="col-4">
+                            <button id="btn-del-usr" class="btn btn-danger">Borrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN Tab de Delete de Usuarios -->
+
     </div>
 
     <script src="./js/jqueryv3.4.1.js"></script>
@@ -168,6 +197,7 @@
     <script src="./js/token.js"></script>
     <script src="./js/alta-usr.js"></script>
     <script src="./js/filter-usr.js"></script>
+    <script src="./js/del-usr.js"></script>
 </body>
 
 </html>
