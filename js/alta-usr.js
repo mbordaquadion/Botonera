@@ -16,7 +16,7 @@ function altaUsuario() {
         data: JSON.stringify(CloudIdentityAltaUsuarioDto),
         statusCode: {
             201: function (data) {
-                debugger
+
                 $("#usr_alta_field").text(JSON.stringify(JSON.parse(data.entity), null, 2));
             },
         }

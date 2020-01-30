@@ -7,7 +7,7 @@ function deleteUsuario() {
         statusCode: {
             204: function (data) {
                 debugger
-                $('#alrt-del-usr').fadeIn(1000).fadeOut(5000);
+                showAlertMessage("Usuario eliminado");
             },
         }
     }).fail(function (jqXHR, textStatus) {

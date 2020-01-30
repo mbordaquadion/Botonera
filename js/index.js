@@ -9,6 +9,7 @@ $(function () {
     $("#btn-filter-usr").click(filterUsuario);
     $("#btn-del-usr").click(deleteUsuario);
     $("#alta-usuario").click(altaUsuario);
+    $("#add-usr-group").click(agregarSocio);
 
     let urlParams = new URLSearchParams(window.location.search);
     let code = urlParams.get('code');
@@ -21,3 +22,9 @@ $(function () {
 
     $("#token_code").val(code);
 });
+
+function showAlertMessage(message) {
+    $('#alrt-msj').text(message);
+    $('#alrt-msj').fadeIn(1000).fadeOut(5000);
+
+}
