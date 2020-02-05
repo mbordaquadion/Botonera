@@ -2,7 +2,7 @@ var ID_USUARIO = undefined;
 
 function filterUsuario() {
     let uri = "";
-    let values = $("#select-filter option[selected]").val();
+    let values = $("#select-filter").val();
 
     switch (values) {
         case "2":
@@ -20,8 +20,10 @@ function filterUsuario() {
             break;
     }
 
+    let mail = $('.find-usr-filter').val() || $('.find-usr-filter2').val();
+
     $.ajax({
-        url: uri + $('#find-usr-filter').val(),
+        url: uri + mail,
         method: "GET",
         contentType: 'application/json; charset=utf-8',
         statusCode: {
@@ -32,6 +34,7 @@ function filterUsuario() {
                     ID_USUARIO = json.Resources[0].id;
 
                     $("#add-usr-group").attr("disabled", false);
+                    $("#usr-mod-userid, #usr-del-userid").val(ID_USUARIO);
 
                 } else {
                     ID_USUARIO = undefined;
@@ -58,8 +61,12 @@ function agregarSocio() {
             204: function (data) {
                 debugger
                 showAlertMessage("Usuario Agregado a Grupo de socios");
-                $("#usr_alta_field").text(JSON.stringify(JSON.parse(data.entity), null, 2));
+                let ent = JSON.parse(data.entity);
+
+                $("#usr_alta_field").text(JSON.stringify(ent, null, 2));
                 $("#add-usr-group").attr("disabled", true);
+
+                $("usr-userid").val(ent.id);
             },
         }
     }).fail(function (jqXHR, textStatus) {

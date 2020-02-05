@@ -54,7 +54,7 @@
             <a class="nav-item nav-link" id="find-usr-tab" data-toggle="tab" href="#find-usr" role="tab"
                 aria-controls="find-usr" aria-selected="false">Buscar Usuario</a>
             <a class="nav-item nav-link" id="del-usr-tab" data-toggle="tab" href="#del-usr" role="tab"
-                aria-controls="del-usr" aria-selected="false">Delete Usuario</a>
+                aria-controls="del-usr" aria-selected="false">Borrar/Modificar Usuario</a>
         </div>
 
     </nav>
@@ -148,11 +148,11 @@
                 <div class="row">
                     <div class="col-9">
                         <div class="input-group">
-                            <input placeholder="Filter" id="find-usr-filter" class="form-control" type="text" value="">
+                            <input placeholder="Filter" class="find-usr-filter form-control" type="text" value="">
                             <div class="input-group-prepend">
                                 <select class="custom-select" id="select-filter"
                                     aria-label="Example select with button addon">
-                                    <option selected value="1">E-Mail</option>
+                                    <option value="1">E-Mail</option>
                                     <option value="2">Phone</option>
                                     <option value="3">UserName</option>
                                     <option value="4">IC</option>
@@ -180,28 +180,74 @@
             <div class="container justify-content-center">
                 <div class="p-3 mb-1 bg-light">
                     <div class="row">
-                        <div class="col-6">
-                            <input placeholder="Id de usuario a borrar" id="del-usr-userid" class="form-control"
-                                type="text" value="">
+                        <div class="col-9">
+                            <div class="input-group">
+                                <input placeholder="Filter" class="find-usr-filter2 form-control" type="text" value="">
+                                <div class="input-group-prepend">
+                                    <select class="custom-select" id="select-filter"
+                                        aria-label="Example select with button addon">
+                                        <option selected value="1">E-Mail</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <button id="btn-del-usr" class="btn btn-danger">Borrar</button>
+                        <div class="col-1">
+                            <button id="btn-filter-mod-usr" class="btn btn-primary">Filter</button>
+                        </div>
+                    </div>
+                    <div class="p-3 mb-1 bg-light border-bottom">
+                        <div class="row">
+                            <div class="col-6">
+                                <input placeholder="Id de usuario a borrar" id="usr-del-userid" class="form-control"
+                                    type="text" value="" disabled>
+                            </div>
+                            <div class="col-4">
+                                <button id="btn-del-usr" class="btn btn-danger">Borrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 mb-1 bg-light border-bottom">
+                        <div class="row">
+                            <div class="col-4">
+                                <input placeholder="Id de usuario" id="usr-mod-userid" class="form-control" type="text"
+                                    value="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <input placeholder="Nombre de Usuario" id="mod-usr-username" class="form-control"
+                                    type="text" value="">
+                            </div>
+
+                            <div class="col-4">
+                                <button id="btn-mod-usr-usrname" class="btn btn-warning">Modificar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <input placeholder="Fecha de Nacimiento" id="mod-usr-fecha" class="form-control"
+                                    type="text" value="">
+                            </div>
+                            <div class="col-4">
+                                <button id="btn-mod-usr-fecha" class="btn btn-warning">Modificar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- FIN Tab de Delete de Usuarios -->
+
         </div>
-        <!-- FIN Tab de Delete de Usuarios -->
 
-    </div>
-
-    <script src="./js/jqueryv3.4.1.js"></script>
-    <script src="./js/bootstrap/bootstrap.min.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/token.js"></script>
-    <script src="./js/alta-usr.js"></script>
-    <script src="./js/filter-usr.js"></script>
-    <script src="./js/del-usr.js"></script>
+        <script src="./js/jqueryv3.4.1.js"></script>
+        <script src="./js/bootstrap/bootstrap.min.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/token.js"></script>
+        <script src="./js/alta-usr.js"></script>
+        <script src="./js/filter-usr.js"></script>
+        <script src="./js/del-usr.js"></script>
+        <script src="./js/mod-usr.js"></script>
 </body>
 
 </html>
