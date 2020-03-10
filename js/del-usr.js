@@ -1,12 +1,12 @@
 function deleteUsuario() {
     
     $.ajax({
-        url: "http://localhost:8080/proxy/rest/CloudIdentityService/bajaUsuario/" + $('#del-usr-userid').val(),
+        url: "http://localhost:8080/proxy/rest/CloudIdentityService/bajaUsuario/" + ID_USUARIO,
         method: "DELETE",
         contentType: 'application/json; charset=utf-8',
         statusCode: {
             204: function (data) {
-                debugger
+                
                 showAlertMessage("Usuario eliminado");
             },
         }

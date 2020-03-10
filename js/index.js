@@ -10,10 +10,11 @@ $(function () {
     $("#btn-get-token").click(getToken);
     $("#bt-token-nocode").click(getTokenWithoutCode);
     $("#btn-refresh-token").click(getRefreshToken);
-    $("#btn-filter-usr, #btn-filter-mod-usr").click(filterUsuario);
+    // $("#btn-filter-usr, #btn-filter-mod-usr").click(filterUsuario);
     $("#btn-del-usr").click(deleteUsuario);
     $("#alta-usuario").click(altaUsuario);
     $("#add-usr-group").click(agregarSocio);
+    $("#alta-usuario-grupo").click(altaUsuarioSocio);
 
     $("#btn-mod-usr-usrname").click(modificarUsuarioUsername);
     $("#btn-mod-usr-fecha").click(modificarUsuarioFechaNac);
@@ -23,6 +24,7 @@ $(function () {
 
     var uri = window.location.toString();
     if (uri.indexOf("?") > 0) {
+        
         var clean_uri = uri.substring(0, uri.indexOf("?"));
         window.history.replaceState({}, document.title, clean_uri);
     }

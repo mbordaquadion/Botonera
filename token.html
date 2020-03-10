@@ -131,9 +131,22 @@
                             type="text" value="">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-4">
+                        <input placeholder="Write your Birth Date" id="alta-usr-date" class="form-control" type="text"
+                            value="">
+                    </div>
+                    <div class="col-4">
+                        <input placeholder="Write your IC" id="alta-usr-IC" class="form-control"
+                            type="text" value="">
+                    </div>
+                </div>
                 <div class="row justify-content-end">
                     <div class="col-1">
                         <button class="btn btn-md btn-primary" id="alta-usuario">Submit</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-md btn-success" id="alta-usuario-grupo">Alta y Asociacion</button>
                     </div>
                 </div>
                 <div class="row">
@@ -161,7 +174,7 @@
                         </div>
                     </div>
                     <div class="col-1">
-                        <button id="btn-filter-usr" class="btn btn-primary">Filter</button>
+                        <button id="btn-filter-usr" class="btn btn-primary" onclick="filterUsuario('F')">Filter</button>
                     </div>
                     <div class="col-2 ">
                         <button class="btn btn-md btn-warning" id="add-usr-group" disabled>Agregar Socio</button>
@@ -192,7 +205,7 @@
                             </div>
                         </div>
                         <div class="col-1">
-                            <button id="btn-filter-mod-usr" class="btn btn-primary">Filter</button>
+                            <button id="btn-filter-mod-usr" class="btn btn-primary" onclick="filterUsuario('B')">Filter</button>
                         </div>
                     </div>
                     <div class="p-3 mb-1 bg-light border-bottom">

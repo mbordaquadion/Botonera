@@ -1,6 +1,6 @@
 var ID_USUARIO = undefined;
 
-function filterUsuario() {
+function filterUsuario(bool) {
     let uri = "";
     let values = $("#select-filter").val();
 
@@ -19,8 +19,14 @@ function filterUsuario() {
             uri = "http://localhost:8080/proxy/rest/CloudIdentityService/usuario/email/";
             break;
     }
+    let mail = "";
 
-    let mail = $('.find-usr-filter').val() || $('.find-usr-filter2').val();
+    if (bool == 'F') {
+        mail = $('.find-usr-filter').val();
+    } else {
+
+        mail = $('.find-usr-filter2').val();
+    }
 
     $.ajax({
         url: uri + mail,
@@ -28,7 +34,7 @@ function filterUsuario() {
         contentType: 'application/json; charset=utf-8',
         statusCode: {
             200: function (data) {
-                debugger
+                
                 let json = JSON.parse(data.entity);
                 if (json.Resources[0]) {
                     ID_USUARIO = json.Resources[0].id;
@@ -59,7 +65,7 @@ function agregarSocio() {
         contentType: 'application/json; charset=utf-8',
         statusCode: {
             204: function (data) {
-                debugger
+                
                 showAlertMessage("Usuario Agregado a Grupo de socios");
                 let ent = JSON.parse(data.entity);
 

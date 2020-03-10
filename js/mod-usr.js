@@ -14,7 +14,7 @@ function modificarUsuario(uri, param) {
         contentType: 'application/json; charset=utf-8',
         statusCode: {
             204: function (data) {
-                debugger
+                
                 showAlertMessage("Modificacion Realizada");
 
             },
